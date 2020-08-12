@@ -10,17 +10,26 @@ jobs:
       moduleDir: ${{ steps.auto-ci.outputs.moduleDir}}
     steps:
       - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+            cache-name: cache-node-modules
+        with:
+            # npm cache files are stored in `~/.npm` on Linux/macOS
+            path: node_modules
+            key: ${{ runner.os }}-${{ hashFiles('**/yarn-lock.json') }}
+            # restore-keys: ${{ runner.os }}-
       - name: auto-ci
         id: auto-ci
         uses: wangziling100/AutoCI@v1.0.5
         with:
-          configPath: .github/autoci.config.json
+          configPath: .github/autoCI.config.json
           #modulesDir: packages
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
         with:
           name: coverage-report
-          path: ${{ steps.auto-ci.outputs.moduleDir}}/coverage
+          path: coverage
   codecov:
     runs-on: ubuntu-latest
     needs: ci
@@ -29,18 +38,20 @@ jobs:
         uses:  actions/download-artifact@v2
         with:
           name: coverage-report
+      - shell: bash
+        run: ls
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          #file: ./coverage.xml
+          #file: ./coverage/clover.xml
           #files: ./coverage1.xml,./coverage2.xml
-          directory: coverage
+          directory: .
           flags: unittests
           #env_vars: OS,PYTHON
           name: codecov-umbrella
           fail_ci_if_error: true
-          path_to_write_report: coverage/codecov_report.gz
+          path_to_write_report: codecov_report.gz
   publish:
     runs-on: ubuntu-latest
     needs: ci
