@@ -21,7 +21,7 @@ jobs:
             # restore-keys: ${{ runner.os }}-
       - name: auto-ci
         id: auto-ci
-        uses: wangziling100/AutoCI@v1.0.5
+        uses: wangziling100/AutoCI@v1.0.6
         with:
           configPath: .github/autoCI.config.json
           #modulesDir: packages
