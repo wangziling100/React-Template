@@ -21,8 +21,22 @@
     "type": "git",
     "url": "git+https://github.com/wangziling100/React-Components.git"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!**/*.test.**",
+      "!**/coverage/**",
+      "!**/.github/**",
+      "!**/dist/**"
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  },
   "scripts": {
-    "test": "jest --rootDir ./src/test",
+    "test": "jest src/test",
     "eject": "react-scripts eject",
     "bundle": "webpack",
     "build": "webpack --mode production",
@@ -37,7 +51,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
+    "@types/jest": "^26.0.9",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
@@ -89,6 +103,7 @@
     "purgecss-webpack-plugin": "^2.3.0",
     "style-loader": "^1.2.1",
     "tailwindcss": "^1.6.2",
+    "ts-jest": "^26.2.0",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
