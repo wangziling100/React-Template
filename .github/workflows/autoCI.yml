@@ -38,20 +38,23 @@ jobs:
         uses:  actions/download-artifact@v2
         with:
           name: coverage-report
+          path: ./coverage
       - shell: bash
         run: ls
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          #file: ./coverage/clover.xml
-          #files: ./coverage1.xml,./coverage2.xml
-          directory: .
+          #file: clover.xml
+          file: ./coverage/coverage-final.json
+          #files: clover.xml,coverga-final.json,lcov-report
+          #directory: ./coverage
           flags: unittests
           #env_vars: OS,PYTHON
           name: codecov-umbrella
           fail_ci_if_error: true
-          path_to_write_report: codecov_report.gz
+          #path_to_write_report: ./coverage/codecov_report.gz
+
   publish:
     runs-on: ubuntu-latest
     needs: ci

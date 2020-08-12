@@ -27,7 +27,8 @@
       "!**/*.test.**",
       "!**/coverage/**",
       "!**/.github/**",
-      "!**/dist/**"
+      "!**/dist/**",
+      "!**/*config.**"
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
