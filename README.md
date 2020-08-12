@@ -63,6 +63,10 @@ This action generates a release-draft after each push or PR. More information [h
 ### `Commit lint`
 It works not very well, may change later.
 
+## Files
+
+Some files you should change before you use this template, like package.json.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
