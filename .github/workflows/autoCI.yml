@@ -14,7 +14,7 @@ jobs:
         id: auto-ci
         uses: wangziling100/AutoCI@v1.0.5
         with:
-          configPath: .github/autoci.config.json
+          configPath: .github/autoCI.config.json
           #modulesDir: packages
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
