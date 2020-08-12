@@ -79,10 +79,12 @@ devServer: {
   port: 9000 
 },
 plugins: [
+  /*
   new HtmlWebpackPlugin({
     template: './public/index.html',
     favicon: './public/favicon.ico'
   }),
+  */
   new MiniCssExtractPlugin(),
   new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
