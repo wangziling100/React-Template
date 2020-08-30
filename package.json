@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "author": "wangziling100 <wangziling1000@gmail.com>",
   "homepage": "https://github.com/wangziling100/React-Components#readme",
-  "main": "lib/soft-plugin.js",
+  "main": "./dist/index.js",
   "license": "MIT",
   "directories": {
     "lib": "lib",
