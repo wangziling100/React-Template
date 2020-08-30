@@ -47,7 +47,7 @@
     "bundle": "webpack",
     "build": "webpack --mode production",
     "start": "react-scripts start",
-    "lint": "eslint ./src/components/*",
+    "lint": "eslint ./src/index.tsx",
     "test:react": "react-scripts test"
   },
   "bugs": {
