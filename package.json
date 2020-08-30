@@ -1,6 +1,6 @@
 {
   "name": "@wangziling100/react-template",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "wangziling100 <wangziling1000@gmail.com>",
   "homepage": "https://github.com/wangziling100/React-Components#readme",
@@ -49,9 +49,9 @@
     "url": "https://github.com/wangziling100/React-Components/issues"
   },
   "dependencies": {
-    "@testing-library/user-event": "^12.1.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
+    "@testing-library/user-event": "^12.1.3",
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.1",
     "@types/react": "^16.9.48",
@@ -62,7 +62,6 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "typescript": "~4.0.2"
-
   },
   "eslintConfig": {
     "extends": "react-app"
