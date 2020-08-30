@@ -11,9 +11,13 @@
     "test": "./src/test"
   },
   "files": [
-    "lib",
-    "src",
-    "dist"
+    "src/*d.ts",
+    "src/*d.ts.map",
+    "src/lib/*d.ts",
+    "src/lib/*d.ts.map",
+    "src/components/*d.ts",
+    "src/components/*d.ts.map",
+    "dist/*"
   ],
   "publishConfig": {
     "access": "public"
