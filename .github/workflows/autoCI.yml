@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       moduleDir: ${{ steps.auto-ci.outputs.moduleDir}}
+      info: ${{ steps.auto-ci.outputs.info}}
     steps:
       - uses: actions/checkout@v2
       - name: Cache node modules
