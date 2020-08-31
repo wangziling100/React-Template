@@ -123,6 +123,7 @@ plugins: [
   */
   new MiniCssExtractPlugin({
     filename: 'styles.css'
+
   }),
   new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
