@@ -29,6 +29,7 @@ module.exports = {
   },
   optimization:{
     splitChunks: {
+      /*
       cacheGroups: {
         styles: {
           name: 'styles',
@@ -36,7 +37,9 @@ module.exports = {
           chunks: 'all',
           enforce: true
         }
-      }
+      },
+      */
+      chunks: 'all'
     },
   },
   // adding .ts and .tsx to resolve.extensions will help babel look for .ts and .tsx files to transpile
@@ -103,12 +106,14 @@ module.exports = {
     }
   ]
 },
+/*
 devServer: {
   historyApiFallback: true,
   contentBase: path.join(__dirname, 'dist'),
   compress: true,
   port: 9000 
 },
+*/
 plugins: [
   /*
   new HtmlWebpackPlugin({
@@ -116,7 +121,9 @@ plugins: [
     favicon: './public/favicon.ico'
   }),
   */
-  new MiniCssExtractPlugin(),
+  new MiniCssExtractPlugin({
+    filename: 'styles.css'
+  }),
   new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
   }),
